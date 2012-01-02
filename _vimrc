@@ -7,7 +7,7 @@ set nocompatible
 filetype off
 
 if has('win32') || has('win64')
-  set rtp+=~/My\ Documents/Dropbox/Settings/vim/vundle/vundle.git/
+ "to set rtp+=~/My\ Documents/Dropbox/Settings/vim/vundle/vundle.git/
   set noshellslash
   call vundle#rc('~/My Documents/Dropbox/Settings/vim/vundle/plugins')
 elseif has('mac')
@@ -35,23 +35,20 @@ Bundle 'QuickBuf'
 Bundle 'snipMate'
 Bundle 'surround.vim'
 Bundle 'ZenCoding.vim'
-
 Bundle 'taskpaper.vim'
-
+Bundle 'tpope/vim-pathogen'
 Bundle 'rbgrouleff/bclose.vim'
-
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler'
 "Bundle 'Shougo/vimproc'
 "Bundle 'Shougo/vimshell'
-
 "Bundle 'ujihisa/vimshell-ssh'
-
 "Bundle 'fuenor/qfixhowm'
-Bundle 'qfixhowm2'
 
-Bundle 'commentout.vim'
+" pathogen.vimで読み込むもの
+" qfixhowm2
+" commentout.vim
 
 filetype plugin indent on
 
@@ -280,6 +277,10 @@ endif
 "///////////////////////////////////////////////////////////////////////////////
 " プラグインごとの設定
 "///////////////////////////////////////////////////////////////////////////////
+
+" --------------------------------------------
+" pathogen.vim
+call pathogen#infect()
 
 " --------------------------------------------
 " migemo.vim
