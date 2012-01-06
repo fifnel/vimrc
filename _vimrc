@@ -7,9 +7,9 @@ set nocompatible
 filetype off
 
 if has('win32') || has('win64')
- "to set rtp+=~/My\ Documents/Dropbox/Settings/vim/vundle/vundle.git/
+  set rtp+=~/My\ Documents/git/vimrc/vundle/vundle.git/
   set noshellslash
-  call vundle#rc('~/My Documents/Dropbox/Settings/vim/vundle/plugins')
+  call vundle#rc('~/My Documents/git/vimrc/vundle/plugins')
 elseif has('mac')
   set rtp+=~/Dropbox/Settings/vim/vundle/vundle.git/
   call vundle#rc('~/Dropbox/Settings/vim/vundle/plugins')
