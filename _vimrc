@@ -32,7 +32,6 @@ Bundle 'jcommenter.vim'
 Bundle 'monday'
 Bundle 'project.tar.gz'
 Bundle 'QuickBuf'
-Bundle 'snipMate'
 Bundle 'surround.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'taskpaper.vim'
@@ -298,6 +297,13 @@ nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
 " --------------------------------------------
 " neocomplcache.vim
+" スニペットファイルの配置場所
+if has('win32') || has('win64')
+    let g:neocomplcache_snippets_dir = '~/.vim/snippets'
+elseif has('mac')
+elseif has('unix') && match(system('uname'),'Darwin')!=-1
+else
+endif
 let g:neocomplcache_enable_at_startup = 1
 let g:NeoComplCache_SmartCase = 1
 let g:NeoComplCache_EnableCamelCaseCompletion = 1
@@ -312,6 +318,10 @@ inoremap <expr><C-h> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
 inoremap <expr><BS> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
 inoremap <expr><CR> pumvisible() ? "\<C-y>\<CR>X\<BS>" : "\<CR>X\<BS>"
 noremap <silent> <C-e> :NeoComplCacheToggle<CR>
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
 
 " --------------------------------------------
 " unite.vim
@@ -347,11 +357,12 @@ let g:unite_source_file_mru_filename_format = ''
 nnoremap <silent> <Leader>. :VimFiler<CR>
 let g:vimfiler_sort_type = 'T'
 
-" WriteRoomの書き込み先
+" お決まりの開き先
 if has('win32') || has('win64')
-nnoremap <silent> fw :VimFiler ~/My\ Documents//Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fw :VimFiler ~/My\ Documents/Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fc :VimFiler ~/My\ Documents/codebox/<CR>
 else
-nnoremap <silent> fw :VimFiler ~/Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fw :VimFiler ~/Dropbox/Documents/PlainText/<CR>
 endif
 
 
