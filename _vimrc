@@ -622,11 +622,12 @@ nnoremap <silent> <Leader>fe :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 "let g:vimfiler_sort_type = 'F'
 "call vimfiler#set_execute_file('txt', 'vim')
 
-" WriteRoomの書き込み先
+" お決まりの開き先
 if has('win32') || has('win64')
-nnoremap <silent> fw :VimFiler ~/My\ Documents//Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fw :VimFiler ~/My\ Documents/Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fc :VimFiler ~/My\ Documents/codebox/<CR>
 else
-nnoremap <silent> fw :VimFiler ~/Dropbox/Documents/PlainText/<CR>
+nnoremap <silent> <Leader>fw :VimFiler ~/Dropbox/Documents/PlainText/<CR>
 endif
 
 
