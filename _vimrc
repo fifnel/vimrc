@@ -1,5 +1,9 @@
 set nocompatible
 
+" 正規表現エンジンを旧型に
+" Rubyの正規表現で重たい
+set re=1
+
 "///////////////////////////////////////////////////////////////////////////////
 " vundleの読み込み設定
 "///////////////////////////////////////////////////////////////////////////////
@@ -429,11 +433,11 @@ nnoremap <silent> vp :VimShellPop<CR>
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 5
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 let g:neocomplete#disable_auto_complete = 1
@@ -547,10 +551,10 @@ smap <C-y>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-y>     <Plug>(neosnippet_expand_target)
 
 "" TAB
-"imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 "" S-TAB
-"imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 "" SuperTab like snippets behavior.
 "imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
