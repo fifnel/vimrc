@@ -54,14 +54,16 @@ NeoBundle 'nishigori/vim-sunday'
 NeoBundle 'sakuraiyuta/commentout.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'fugitive.vim' " git
-
-
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'jellybeans.vim'
 NeoBundle 'vim-scripts/TwitVim' " Twitter client for Vim
-
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle "osyo-manga/unite-qfixhowm"
+
+" colorscheme
+NeoBundle 'jellybeans.vim'
+NeoBundle 'vim-scripts/hybrid.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+
+NeoBundle 'itchyny/lightline.vim'
 
 " coding
 NeoBundle 'cake.vim'
@@ -117,8 +119,8 @@ set tags+=./tags;
 "///////////////////////////////////////////////////////////////////////////////
 
 set t_Co=256
-colorscheme jellybeans " カラースキーム
-highlight CursorLine ctermbg=black guibg=gray10   " カーソル行の色
+colorscheme hybrid " カラースキーム
+"highlight CursorLine ctermbg=black guibg=gray10   " カーソル行の色
 
 
 "///////////////////////////////////////////////////////////////////////////////
@@ -610,8 +612,8 @@ inoremap <buffer> <C-l> <C-x><C-u><C-p><Down>
 endfunction"}}}
 
 let g:unite_source_file_mru_limit = 200
-let g:unite_cursor_line_highlight = 'TabLineSel'
-let g:unite_abbr_highlight = 'TabLine'
+"let g:unite_cursor_line_highlight = 'TabLineSel'
+"let g:unite_abbr_highlight = 'TabLine'
 
 " For optimize.
 let g:unite_source_file_mru_filename_format = ''

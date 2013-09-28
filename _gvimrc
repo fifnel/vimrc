@@ -42,7 +42,8 @@ nnoremap <silent> tp :<C-u>tabprevious<CR>
 
 
 "colorscheme desert " カラースキーム
-colorscheme jellybeans " カラースキーム
+"colorscheme jellybeans " カラースキーム
+colorscheme hybrid
 
 " vim: set ts=4 sw=4 sts=0 tw=0
 
